@@ -21,7 +21,7 @@ repository               : "VIS-WA.github.io"
 #               Additional customization can be done by editing /_includes/author-profile.html
 author:
   # Biographic information
-  avatar           : "profile.png"
+  avatar           : "profile.jpeg"
   name             : "Savitha Viswanadh Kandala"
   pronouns         : #"he/him" # example: "she/her"  
   bio              : "CS PhD Student at National University of Singapore"
@@ -58,7 +58,7 @@ author:
   keybase          : # Username
   instagram        : # Username
   lastfm           : # Username
-  linkedin         : # Username
+  linkedin         : savitha-viswanadh
   mastodon         : # URL
   medium           : # URL
   pinterest        : # Username
