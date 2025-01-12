@@ -82,7 +82,7 @@
     {
       "title": "ACM MobiCom 2024 Travel Grant",
       "date": "2024",
-      "url": "https://www.sigmobile.org/mobicom/2024/grants.html",
+      "url": "https://www.sigmobile.org/mobicom/2024/grants.html"
     },
     {
       "title": "NUS PhD Research Scholarship",
@@ -126,13 +126,13 @@
       "name": "TinyLLM: A Framework for Training and Deploying Language Models at the Edge Computers",
       "publisher": "ArXiv",
       "releaseDate": "2024",
-      "url": "https://arxiv.org/abs/2412.15304",
+      "url": "https://arxiv.org/abs/2412.15304"
     },
     {
       "name": "Engineering Affordable and Scalable Remote Labs using IoT-based Retrofitting",
       "publisher": "IEEE Access",
       "releaseDate": "2024",
-      "url": "https://ieeexplore.ieee.org/document/9595688",
+      "url": "https://ieeexplore.ieee.org/document/9595688"
     }
   ],
   "skills": [
