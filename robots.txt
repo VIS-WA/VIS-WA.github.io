@@ -1,1 +1,1 @@
-User-agent: * Disallow: Sitemap: https://VIS-WA.github.io/sitemap.xml
+User-agent: * Disallow: Sitemap: https://viswanadhk.com/sitemap.xml
