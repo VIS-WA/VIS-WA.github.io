@@ -62,7 +62,7 @@
       "url": "https://www.iiit.ac.in",
       "startDate": "2020-12-01",
       "endDate": "2024",
-      "summary": "Pioneered RLabs, an IoT-driven platform enabling remote access to science experiments"
+      "summary": "Pioneered [RLabs](https://remote-labs.in), an IoT-driven platform enabling remote access to science experiments"
     }
   ],
   "volunteer": [
@@ -114,14 +114,14 @@
     },
     {
       "title": "Solved 'IBM Ponder This' Challenge",
-      "date": "2023-09-01",
+      "date": "2022-23",
       "awarder": "IBM",
       "url": "https://research.ibm.com/haifa/ponderthis/index.shtml",
       "summary": "First Indian to solve the 'IBM Ponder This' challenge, a prestigious algorithmic problem-solving competition, in May 2022."
     }
   ],
 
-  "publications": [
+  "selected publications": [
     {
       "name": "TinyLLM: A Framework for Training and Deploying Language Models at the Edge Computers",
       "publisher": "ArXiv",
