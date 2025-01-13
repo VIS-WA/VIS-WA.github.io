@@ -1,81 +1,60 @@
 ---
 layout: page
-title: project 1
-description: with background image
-img: assets/img/12.jpg
+title: TinyLLM
+description: A Framework for Training and Deploying Language Models at the Edge
+img: assets/img/TinyLLM.webp
 importance: 1
-category: work
+category: 
 related_publications: true
 ---
 
-Every project has a beautiful feature showcase page.
-It's easy to include images in a flexible 3-column grid format.
-Make your photos 1/3, 2/3, or full width.
+🚀 **Introducing TinyLLM: Empowering AI at the Edge** 🌟  
 
-To give your project a background in the portfolio page, just add the img tag to the front matter like so:
-
-    ---
-    layout: page
-    title: project
-    description: a project with a background image
-    img: /assets/img/12.jpg
-    ---
+**TinyLLM** is a lightweight framework designed to train, fine-tune, and deploy smaller language models (30 - 124M) at **edge devices** for supporting embedded sensing/ IoT platforms.
 
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/1.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/3.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/5.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
+        {% include figure.liquid loading="eager" path="assets/img/1.jpeg" title="example image" class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
 <div class="caption">
-    Caption photos easily. On the left, a road goes through a tunnel. Middle, leaves artistically fall in a hipster photoshoot. Right, in another hipster photoshoot, a lumberjack grasps a handful of pine needles.
+    TinyLLM: You provide data, and TinyLLM generates a custom-trained tiny language model tailored for your embedded sensing application. TinyLLM also simplifies their deployment on resource-constrained platform!
 </div>
+
+**Features of TinyLLM**  
+- 🧩 **Pre-training flexibility**: Allows pre-training, enabling the addition of custom data to improve accuracy.  
+- 📚 **Dataset preparation made easy**: Flexibility to prepare pre-training datasets by merging multiple datasets seamlessly.  
+- 🔄 **Fine-tuning support**: Fine-tune various models like LLaMA, Phi, and more to suit diverse use cases.  
+- 📦 Optimized for small-scale LLMs, making AI accessible even on devices with limited resources.
+- 🔓 Fully open-source and Apache-v2 licensed for maximum flexibility.  
+
+💡 **Featured Application: Embedded Sensing**  
+
+TinyLLM excels in embedded sensing, enabling almost real-time activity recognition and other sensor-based AI tasks with minimal latency. In one of our benchmarks, TinyLLM achieved state-of-the-art accuracy while running on a microcontroller-class device—also matching the performance of larger off-the-shelf LLMs like Meta's Llama 3 and Microsoft's Phi 3. Further, we have created custom foundational models for applications like **hand gesture tracking support**, **localisation**, and **breathing rate detection**. 
+ 
+
+👉 Check out the framework, experiment with the code, or dive deeper into the technical details:  
+    🌍 Website: [TinyLLM.org](https://tinyllm.org/)
+    🔗 GitHub Repository: [github.com/weiserlab/TinyLLM](https://github.com/weiserlab/TinyLLM)  
+    📄 ArXiv Paper: [{% cite tinyllm %}](https://arxiv.org/abs/2412.15304)  
+
+#TinyLLM #EdgeAI #EmbeddedSensing #MachineLearning #OpenSource #AI 
+
+
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/5.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
+        {% include figure.liquid loading="eager" path="assets/img/4.jpeg" title="example image" class="img-fluid rounded z-depth-1" %}
+    </div>
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.liquid loading="eager" path="assets/img/3.jpeg" title="example image" class="img-fluid rounded z-depth-1" %}
+    </div>
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.liquid loading="eager" path="assets/img/2.jpeg" title="example image" class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
 <div class="caption">
-    This image can also have a caption. It's like magic.
+    From the left, the images show the way the sensor data is collected for human gestures and robot localisation. The third image shows the accuracy of TinyLLM models compared to off-the-shelf LLMs.
 </div>
 
-You can also put regular text between your rows of images, even citations {% cite einstein1950meaning %}.
-Say you wanted to write a bit about your project before you posted the rest of the images.
-You describe how you toiled, sweated, _bled_ for your project, and then... you reveal its glory in the next row of images.
-
-<div class="row justify-content-sm-center">
-    <div class="col-sm-8 mt-3 mt-md-0">
-        {% include figure.liquid path="assets/img/6.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm-4 mt-3 mt-md-0">
-        {% include figure.liquid path="assets/img/11.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-<div class="caption">
-    You can also have artistically styled 2/3 + 1/3 images, like these.
-</div>
-
-The code is simple.
-Just wrap your images with `<div class="col-sm">` and place them inside `<div class="row">` (read more about the <a href="https://getbootstrap.com/docs/4.4/layout/grid/">Bootstrap Grid</a> system).
-To make images responsive, add `img-fluid` class to each; for rounded corners and shadows use `rounded` and `z-depth-1` classes.
-Here's the code for the last row of images above:
-
-{% raw %}
-
-```html
-<div class="row justify-content-sm-center">
-  <div class="col-sm-8 mt-3 mt-md-0">
-    {% include figure.liquid path="assets/img/6.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-  </div>
-  <div class="col-sm-4 mt-3 mt-md-0">
-    {% include figure.liquid path="assets/img/11.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-  </div>
-</div>
-```
 
 {% endraw %}
