@@ -68,7 +68,17 @@ ninja.data = [{
           section: "News",},{id: "news-released-tinyllm-a-framework-for-training-and-deploying-language-models-at-the-edge",
           title: 'Released TinyLLM! A Framework for Training and Deploying Language Models at the Edge...',
           description: "",
-          section: "News",},{
+          section: "News",},{id: "projects-tinyllm",
+          title: 'TinyLLM',
+          description: "A Framework for Training and Deploying Language Models at the Edge",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/1_project/";
+            },},{id: "projects-rlabs",
+          title: 'RLabs',
+          description: "Remotely controlled labs",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/2_project/";
+            },},{
         id: 'social-email',
         title: 'email',
         section: 'Socials',
