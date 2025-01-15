@@ -55,6 +55,3 @@ TinyLLM excels in embedded sensing, enabling almost real-time activity recogniti
 <div class="caption">
     From the left, the images show the way the sensor data is collected for human gestures and robot localisation. The third image shows the accuracy of TinyLLM models compared to off-the-shelf LLMs.
 </div>
-
-
-{% endraw %}
