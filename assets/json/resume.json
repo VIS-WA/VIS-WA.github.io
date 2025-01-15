@@ -36,7 +36,7 @@
       "startDate": "2019",
       "endDate": "2024",
       "score": "CGPA: 9.01/10.0",
-      "courses": []   
+      "courses": []
     }
   ],
   "work": [
@@ -73,9 +73,7 @@
       "endDate": "2021",
       "position": "Student Tutor",
       "summary": "Volunteered to educate underprivileged students in rural India.",
-      "highlights": [
-        "Taught basic science and mathematics to students from rural areas."
-      ]
+      "highlights": ["Taught basic science and mathematics to students from rural areas."]
     }
   ],
   "awards": [
@@ -139,25 +137,12 @@
     {
       "name": "Programming",
       "level": "Advanced",
-      "keywords": [
-        "C/C++",
-        "Python",
-        "Java",
-        "Matlab",
-        "Bash"
-      ]
+      "keywords": ["C/C++", "Python", "Java", "Matlab", "Bash"]
     },
     {
       "name": "Tools & Frameworks",
       "level": "Advanced",
-      "keywords": [
-        "Linux",
-        "Git",
-        "LaTeX",
-        "Wireshark",
-        "Slurm",
-        "IoT Boards"
-      ]
+      "keywords": ["Linux", "Git", "LaTeX", "Wireshark", "Slurm", "IoT Boards"]
     }
   ],
   "languages": [

@@ -11,4 +11,3 @@ giscus_comments: true
 {% cite journal_rtl %}
 
 (and continues...)
-
