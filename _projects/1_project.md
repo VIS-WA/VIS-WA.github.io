@@ -4,7 +4,7 @@ title: TinyLLM
 description: A Framework for Training and Deploying Language Models at the Edge
 img: assets/img/TinyLLM.webp
 importance: 1
-category: 
+category: work
 related_publications: true
 ---
 

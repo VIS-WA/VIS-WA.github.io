@@ -4,7 +4,7 @@ title: RLabs
 description: Remotely controlled labs
 img: assets/img/remote_labs.png
 importance: 2
-category:
+category: work
 giscus_comments: true
 ---
 

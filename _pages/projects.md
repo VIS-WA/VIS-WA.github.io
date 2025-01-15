@@ -5,7 +5,7 @@ permalink: /projects/
 description: # add any if required
 nav: true
 nav_order: 3
-display_categories: []
+display_categories: [work]
 horizontal: false
 ---
 
