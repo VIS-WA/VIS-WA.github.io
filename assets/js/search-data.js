@@ -68,7 +68,7 @@ ninja.data = [{
           section: "News",},{id: "news-released-tinyllm-a-framework-for-training-and-deploying-language-models-at-the-edge",
           title: 'Released TinyLLM! A Framework for Training and Deploying Language Models at the Edge...',
           description: "",
-          section: "News",},{id: "news-presented-a-poster-at-nus-ai-research-day-part-of-singapore-ai-frontier-week-on-tinyllm-showcased-tinyllm-at-the-inaugural-nus-ai-research-day-part-of-singapore-ai-frontier-week",
+          section: "News",},{id: "news-presented-a-poster-at-nus-ai-research-day-part-of-singapore-ai-frontier-week-on-tinyllm",
           title: 'Presented a poster at NUS AI Research Day, part of Singapore AI Frontier...',
           description: "",
           section: "News",},{id: "news-solved-ibm-research-s-ponder-this-november-2025-challenge",
