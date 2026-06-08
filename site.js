@@ -134,7 +134,7 @@
   /* ---- CV link: injected via JS so crawlers/scrapers don't index the file,
          while a real visitor sees it in the nav + contact. Clicking downloads
          the PDF directly (relative path, served from the repo). ---- */
-  const CV_PDF = 'assets/pdf/Viswanadh_Resume.pdf';   // ← your CV PDF in the repo
+  const CV_PDF = 'assets/pdf/Viswanadh_resume.pdf';   // ← your CV PDF in the repo
   (function injectCV() {
     const nav = document.getElementById('navLinks');
     if (nav && !nav.querySelector('[data-cv]')) {
