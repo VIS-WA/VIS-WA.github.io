@@ -60,7 +60,7 @@
   /* ---- email assembly (anti-scrape; NUS address, +tag tracks the source) ---- */
   // Parts kept split so scrapers can't lift a literal address from the source.
   const eUser = 'viswanadh', eDom = 'u.nus.edu';
-  const eShown = eUser + ' [at] ' + eDom.replace(/\./g, ' [dot] ');   // human-readable, scraper-resistant
+  const eShown = eUser + ' [at] ' + eDom;   // human-readable (domain dots kept), scraper-resistant
   const eSend  = eUser + '+web@' + eDom;                              // +web = "came from the website"
   const el = document.getElementById('emailLink');
   if (el) {
@@ -79,6 +79,7 @@
       if (me) authors = authors.split(me).join('<span class="me">' + me + '</span>');
       const links = (p.links || []).map((l) =>
         `<a href="${l.href}" target="_blank" rel="noopener">${l.label}</a>`).join('');
+      const fig = p.img ? `<figure class="pub-fig"><img src="${p.img}" alt="${p.title}" loading="lazy" /></figure>` : '';
       return `<article class="pub reveal">
         <div class="p-year">${p.year}</div>
         <div>
@@ -86,9 +87,28 @@
           <h3>${p.title}</h3>
           <p class="authors">${authors}</p>
           <div class="p-actions">${links}</div>
+          ${fig}
         </div>
       </article>`;
     }).join('');
+  })();
+
+  /* ---- render featured posts from data/posts.js ---- */
+  (function renderPosts() {
+    const list = document.getElementById('postsList');
+    if (!list || !window.SITE_POSTS) return;
+    const fmtYear = (iso) => (new Date(iso + 'T00:00:00').getFullYear() || iso);
+    const items = window.SITE_POSTS.slice().sort((a, b) => new Date(b.date) - new Date(a.date));
+    list.innerHTML = items.map((p) =>
+      `<article class="pub reveal">
+        <div class="p-year">${fmtYear(p.date)}</div>
+        <div>
+          <span class="p-venue">${p.source}</span>
+          <h3>${p.title}</h3>
+          ${p.desc ? `<p class="authors">${p.desc}</p>` : ''}
+          <div class="p-actions"><a href="${p.href}" target="_blank" rel="noopener">READ ↗</a></div>
+        </div>
+      </article>`).join('');
   })();
 
   /* ---- news + ticker from data/news.js ---- */

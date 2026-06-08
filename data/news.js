@@ -7,6 +7,10 @@
    ============================================================ */
 window.SITE_NEWS = [
   {
+    date: "2026-06-05",
+    html: `<a href="https://tinyllm.org/" target="_blank" rel="noopener">TinyLLM</a> received the 2026 Google Award for Machine Learning Research and Education with TPUs.`
+  },
+  {
     date: "2025-11-05",
     html: `Solved IBM Research's <a href="https://research.ibm.com/haifa/ponderthis/challenges/November2025.html" target="_blank" rel="noopener">Ponder This</a> November 2025 challenge.`
   },

@@ -389,6 +389,13 @@ h1, h2, h3, h4 {
   padding: 0.3rem 0.65rem; transition: all 0.18s var(--ease);
 }
 .pub .p-actions a:hover { color: var(--bg); background: var(--ink); border-color: var(--ink); }
+.pub-fig {
+  margin-top: 1.2rem; max-width: 440px; overflow: hidden;
+  border: 1px solid var(--line-2); border-radius: var(--radius);
+  background: radial-gradient(120% 120% at 50% 0%, var(--bg-2), var(--bg));
+  padding: 0.9rem;
+}
+.pub-fig img { display: block; width: 100%; height: auto; max-height: 190px; object-fit: contain; }
 
 /* ===================== NEWS ===================== */
 .news-grid { display: grid; grid-template-columns: 1fr; gap: 0; }

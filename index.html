@@ -4,7 +4,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Savitha Viswanadh Kandala — Wireless Embedded Systems Researcher</title>
-<meta name="description" content="Savitha Viswanadh Kandala is a PhD researcher at the National University of Singapore working on wireless embedded systems — edge AI (TinyLLM), multi-microcontroller platforms (RAILS), and low-power tag-to-tag networks." />
+<meta name="description" content="Savitha Viswanadh Kandala is a PhD researcher at the National University of Singapore working on wireless embedded systems — edge AI (TinyLLM), multi-microcontroller platforms (MicroSymphony), and low-power tag-to-tag networks (AutoTag)." />
 <meta name="author" content="Savitha Viswanadh Kandala" />
 <meta name="keywords" content="Savitha Viswanadh Kandala, wireless embedded systems, edge AI, TinyLLM, embedded sensing, IoT, NUS, tag-to-tag networks, microcontrollers, on-device AI, PhD researcher" />
 <link rel="canonical" href="https://viswanadhk.com/" />
@@ -16,7 +16,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="Savitha Viswanadh Kandala" />
 <meta property="og:title" content="Savitha Viswanadh Kandala — Wireless Embedded Systems Researcher" />
-<meta property="og:description" content="PhD researcher at NUS working on wireless embedded systems: edge AI (TinyLLM), multi-microcontroller platforms (RAILS), and low-power tag-to-tag networks." />
+<meta property="og:description" content="PhD researcher at NUS working on wireless embedded systems: edge AI (TinyLLM), multi-microcontroller platforms (MicroSymphony), and low-power tag-to-tag networks (AutoTag)." />
 <meta property="og:url" content="https://viswanadhk.com/" />
 <meta property="og:image" content="https://viswanadhk.com/assets/og-image.png" />
 <meta property="og:image:width" content="1200" />
@@ -88,6 +88,7 @@
       <a href="#research">research</a>
       <a href="#publications">publications</a>
       <a href="#news">news</a>
+      <a href="#posts">posts</a>
       <a href="#contact">contact</a>
     </div>
     <button class="theme-btn" id="themeBtn" aria-label="Toggle dark mode">
@@ -165,23 +166,29 @@
       </div>
       <div class="prose reveal">
         <p>
-          I explore how <strong>next-generation embedded tags</strong> are evolving
-          toward architectures that emphasize <strong>local processing</strong> and
-          <strong>peer-to-peer coordination</strong> — enabling energy-sustainable
-          operation at scale.
+          My research is on <strong>wireless embedded systems</strong> — the pipeline that
+          runs from sensor-equipped microcontrollers, through edge devices, to the cloud,
+          and finally to the end user. Each of my three main projects sharpens one segment
+          of that pipeline.
         </p>
         <p>
-          A second thread of my work asks how <strong>smaller foundational models</strong>
-          can bring practical <strong>on-device AI</strong> to highly constrained
-          IoT environments, where memory, power, and connectivity are all in short supply.
-          Together these directions sit under one umbrella: making wireless embedded
-          systems more capable, more autonomous, and far more efficient.
+          <strong>AutoTag</strong> improves the sensor-to-edge link, making battery-free tag
+          networks practical over tens of meters instead of a few. <strong>MicroSymphony</strong>
+          improves what happens on the microcontroller itself, letting it run sensing,
+          inference, and communication concurrently within microwatt budgets.
+          <strong>TinyLLM</strong> improves the edge-to-user layer, moving language-model
+          intelligence from the cloud back onto edge devices so applications don't depend on
+          the network for every query.
+        </p>
+        <p>
+          The recurring theme: when scaling up doesn't work because of physical or resource
+          limits, <strong>architectural specialization</strong> usually does.
         </p>
         <div class="about-card" style="margin-top:1.8rem;">
           <span class="tag">Currently</span>
           <dl>
             <dt>Role</dt><dd>PhD Student, Computer Science</dd>
-            <dt>Lab</dt><dd>Wireless &amp; Sensing Systems, NUS SoC</dd>
+            <dt>Lab</dt><dd>Systems &amp; Networking, NUS SoC</dd>
             <dt>Focus</dt><dd>Edge AI · Embedded tags · Low-power networking</dd>
             <dt>Based in</dt><dd>Singapore</dd>
           </dl>
@@ -203,19 +210,18 @@
 
     <div class="umbrella reveal">
       <span class="chip">Umbrella</span>
-      <span>My PhD advances <strong style="color:var(--ink);font-weight:600;">wireless embedded systems</strong> along three complementary fronts.</span>
+      <span>My PhD advances <strong style="color:var(--ink);font-weight:600;">wireless embedded systems</strong> — the pipeline from sensor-equipped microcontrollers, through edge devices, to the cloud, and finally to the end user. Each project below sharpens one segment of that pipeline; the recurring theme is that where scaling up hits physical or resource limits, architectural specialization wins.</span>
     </div>
 
     <div class="features">
 
-      <!-- ===== 01 · RAILS ===== -->
-      <article class="feat reveal" id="proj-rails">
+      <!-- ===== 01 · MicroSymphony ===== -->
+      <article class="feat reveal" id="proj-microsymphony">
         <div class="feat-media">
-          <!-- Swap the SVG for your own visual: replace everything inside
-               .media-frame (except .corner/.frame-tag) with
-               <img class="media-fill" src="assets/rails.gif" alt="RAILS overview">
-               or <video class="media-fill" autoplay muted loop playsinline poster="...">
-                    <source src="assets/rails.mp4" type="video/mp4"></video> -->
+          <!-- Swap the SVG for your own visual: replace everything inside .media-frame
+               (except .corner/.frame-tag) with
+               <img class="media-fill" src="assets/microsymphony.svg" alt="MicroSymphony overview"
+                    style="object-fit:contain;padding:7%"> -->
           <div class="media-frame">
             <span class="corner tl"></span><span class="corner br"></span>
             <span class="frame-tag">fig · multi-MCU mesh</span>
@@ -254,11 +260,11 @@
         </div>
         <div class="feat-text">
           <div class="p-no">01</div>
-          <h3>Multi-Microcontroller Platforms <span class="codename">RAILS</span></h3>
-          <p>Distributing computation across several coordinated microcontrollers so embedded
-             tags process sensor data locally — trading cloud round-trips for fast, resilient,
-             on-platform intelligence.</p>
-          <div class="p-keys"><span>local processing</span><span>heterogeneous MCUs</span><span>system architecture</span></div>
+          <h3>Multi-Microcontroller Platforms <span class="codename">MicroSymphony</span></h3>
+          <p>Orchestrating several coordinated microcontrollers as a single platform, so an
+             embedded tag can run sensing, inference, and communication concurrently — all
+             within microwatt power budgets, instead of serializing them on one chip.</p>
+          <div class="p-keys"><span>concurrent execution</span><span>heterogeneous MCUs</span><span>microwatt budgets</span></div>
           <a class="p-link" aria-disabled="true"><span class="badge">in progress</span></a>
         </div>
       </article>
@@ -324,8 +330,8 @@
         </div>
       </article>
 
-      <!-- ===== 03 · Tag-to-Tag ===== -->
-      <article class="feat reveal" id="proj-tag">
+      <!-- ===== 03 · AutoTag ===== -->
+      <article class="feat reveal" id="proj-autotag">
         <div class="feat-media">
           <div class="media-frame">
             <span class="corner tl"></span><span class="corner br"></span>
@@ -358,11 +364,11 @@
         </div>
         <div class="feat-text">
           <div class="p-no">03</div>
-          <h3>Low-power Tag-to-Tag Networks</h3>
-          <p>Peer-to-peer coordination between low-power and batteryless tags — letting devices
-             talk to one another directly for energy-sustainable operation at scale, without
-             leaning on power-hungry infrastructure.</p>
-          <div class="p-keys"><span>tag-to-tag</span><span>peer-to-peer</span><span>energy-sustainable</span></div>
+          <h3>Low-power Tag-to-Tag Networks <span class="codename">AutoTag</span></h3>
+          <p>Rethinking the tag-to-tag link so battery-free devices can talk directly to one
+             another over tens of meters instead of a few — enabling peer-to-peer,
+             energy-sustainable networks that don't lean on power-hungry infrastructure.</p>
+          <div class="p-keys"><span>battery-free</span><span>peer-to-peer</span><span>tens of meters</span></div>
           <a class="p-link" aria-disabled="true"><span class="badge">in progress</span></a>
         </div>
       </article>
@@ -401,11 +407,26 @@
   </div>
 </section>
 
+<!-- ===================== FEATURED POSTS ===================== -->
+<section class="section" id="posts">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="idx">05</span>
+      <h2>Featured Posts</h2>
+      <span class="spacer"></span>
+      <span class="note">// in the press</span>
+    </div>
+
+    <!-- Filled from data/posts.js -->
+    <div class="pubs" id="postsList"></div>
+  </div>
+</section>
+
 <!-- ===================== CONTACT ===================== -->
 <section class="contact" id="contact">
   <div class="wrap">
     <div class="sec-head reveal">
-      <span class="idx">05</span>
+      <span class="idx">06</span>
       <h2>Contact</h2>
       <span class="spacer"></span>
       <span class="note">// let's talk</span>
@@ -441,6 +462,7 @@
 
 <script src="data/news.js"></script>
 <script src="data/publications.js"></script>
+<script src="data/posts.js"></script>
 <script src="site.js"></script>
 </body>
 </html>

@@ -18,6 +18,7 @@ window.SITE_PUBLICATIONS = [
     year: 2024,
     venue: "arXiv · Preprint",
     title: "TinyLLM: A Framework for Training and Deploying Language Models at the Edge Computers",
+    img: "assets/TinyLLM.svg",
     authors: "Savitha Viswanadh Kandala, Pramuka Medaranga, and Ambuj Varshney",
     links: [
       { label: "ARXIV",   href: "https://arxiv.org/abs/2412.15304" },
@@ -39,6 +40,7 @@ window.SITE_PUBLICATIONS = [
     year: 2025,
     venue: "IEEE Access",
     title: "Engineering End-to-End Remote Labs Using IoT-Based Retrofitting",
+    img: "assets/remote_labs.svg",
     authors: "Savitha Viswanadh Kandala, Akshit Gureja, Nagesh Walchatwar, and 8 more authors",
     links: [
       { label: "DOI",  href: "https://doi.org/10.1109/ACCESS.2024.3523066" },
