@@ -7,7 +7,7 @@
    ============================================================ */
 window.SITE_NEWS = [
   {
-    date: "2026-06-05",
+    date: "2026-04-19",
     html: `<a href="https://tinyllm.org/" target="_blank" rel="noopener">TinyLLM</a> received the 2026 Google Award for Machine Learning Research and Education with TPUs.`
   },
   {
