@@ -1,0 +1,106 @@
+/* ============================================================
+   anims.css — custom, elegant per-project diagrams
+   (nodes + lines + traveling packets; all simple shapes)
+   Each is an inline SVG in index.html; this drives the motion.
+   Reduced-motion users get a calm static state.
+   ============================================================ */
+
+.proj-svg { width: 100%; height: 100%; display: block; overflow: visible; }
+
+/* shared node / edge language */
+.n-fill  { fill: var(--bg); stroke: var(--line-2); stroke-width: 1.6; transition: stroke 0.4s var(--ease), fill 0.4s var(--ease); }
+.n-soft  { fill: var(--bg-2); stroke: var(--line-2); stroke-width: 1.4; }
+.n-lbl   { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.06em; fill: var(--ink-3); text-transform: uppercase; }
+.n-lbl-s { font-family: var(--font-mono); font-size: 9px;  letter-spacing: 0.05em; fill: var(--ink-3); }
+.edge    { stroke: var(--line-2); stroke-width: 1.5; fill: none; }
+.edge-dash { stroke: var(--accent-line); stroke-width: 1.5; fill: none; stroke-dasharray: 3 5; }
+.pin     { stroke: var(--ink-3); stroke-width: 1.4; }
+.accent-stroke { stroke: var(--accent); }
+.accent-fill   { fill: var(--accent); }
+
+/* traveling packet: moves by (--dx,--dy) from its start point */
+.packet {
+  fill: var(--accent);
+  animation: pkt var(--dur, 3s) cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  animation-delay: var(--delay, 0s);
+}
+@keyframes pkt {
+  0%   { transform: translate(0, 0);               opacity: 0; }
+  10%  { opacity: 1; }
+  90%  { opacity: 1; }
+  100% { transform: translate(var(--dx), var(--dy)); opacity: 0; }
+}
+
+/* expanding signal rings (Tag-to-Tag TX) */
+.ring {
+  fill: none; stroke: var(--accent); stroke-width: 1.4;
+  transform-box: fill-box; transform-origin: center;
+  animation: ring var(--dur, 3s) ease-out infinite;
+  animation-delay: var(--delay, 0s);
+}
+@keyframes ring {
+  0%   { transform: scale(0.55); opacity: 0.75; }
+  100% { transform: scale(2.7);  opacity: 0; }
+}
+
+/* node "receives" — brief accent pulse */
+.flash {
+  transform-box: fill-box; transform-origin: center;
+  animation: flash var(--dur, 3s) ease-in-out infinite;
+  animation-delay: var(--delay, 0s);
+}
+@keyframes flash {
+  0%, 100% { stroke: var(--line-2); }
+  46%, 60% { stroke: var(--accent); }
+}
+
+/* TinyLLM sensor waveform scroll */
+.wave-clip .wave {
+  stroke: var(--accent); stroke-width: 1.8; fill: none;
+  animation: wave 2.2s linear infinite;
+}
+@keyframes wave { from { transform: translateX(0); } to { transform: translateX(-32px); } }
+
+/* TinyLLM model grid twinkle */
+.lcell {
+  fill: var(--accent);
+  transform-box: fill-box; transform-origin: center;
+  animation: twinkle 2.6s ease-in-out infinite;
+}
+@keyframes twinkle {
+  0%, 100% { opacity: 0.22; transform: scale(0.85); }
+  50%      { opacity: 1;    transform: scale(1); }
+}
+
+/* RAILS center hub heartbeat */
+.hub {
+  transform-box: fill-box; transform-origin: center;
+  animation: hub 2.8s ease-in-out infinite;
+}
+@keyframes hub { 0%,100% { transform: scale(1); opacity: 0.9; } 50% { transform: scale(1.18); opacity: 1; } }
+
+/* hero ambient packets traveling along the grid */
+.hero-amb { position: absolute; inset: 0; z-index: 0; pointer-events: none; overflow: hidden;
+  -webkit-mask-image: radial-gradient(120% 90% at 78% 12%, #000 0%, transparent 60%);
+          mask-image: radial-gradient(120% 90% at 78% 12%, #000 0%, transparent 60%); }
+.hero-amb i {
+  position: absolute; width: 5px; height: 5px; border-radius: 50%;
+  background: var(--accent); opacity: 0;
+  box-shadow: 0 0 10px 2px var(--accent-line);
+  animation: amb var(--dur, 9s) linear infinite;
+  animation-delay: var(--delay, 0s);
+}
+@keyframes amb {
+  0%   { opacity: 0; transform: translate(0, 0); }
+  8%   { opacity: 1; }
+  92%  { opacity: 1; }
+  100% { opacity: 0; transform: translate(var(--tx, 0), var(--ty, -260px)); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .packet, .ring, .flash, .wave, .lcell, .hub, .hero-amb i { animation: none !important; }
+  .packet { opacity: 1; }
+  .ring { opacity: 0.3; }
+  .lcell { opacity: 0.7; }
+  .hero-amb { display: none; }
+}

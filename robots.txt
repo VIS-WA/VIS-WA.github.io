@@ -1,7 +1,6 @@
----
-permalink: /robots.txt
----
 User-agent: *
-Disallow:
+Allow: /
+Disallow: /assets/pdf/
+Disallow: /data/
 
-Sitemap: {{ site.baseurl | prepend: site.url }}/sitemap.xml
+Sitemap: https://viswanadhk.com/sitemap.xml
