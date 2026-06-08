@@ -392,7 +392,7 @@ h1, h2, h3, h4 {
 .pub-fig {
   margin-top: 1.2rem; max-width: 440px; overflow: hidden;
   border: 1px solid var(--line-2); border-radius: var(--radius);
-  background: radial-gradient(120% 120% at 50% 0%, var(--bg-2), var(--bg));
+  background: #fff;   /* white matte so transparent SVG figures read in dark mode too */
   padding: 0.9rem;
 }
 .pub-fig img { display: block; width: 100%; height: auto; max-height: 190px; object-fit: contain; }

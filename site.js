@@ -97,11 +97,14 @@
   (function renderPosts() {
     const list = document.getElementById('postsList');
     if (!list || !window.SITE_POSTS) return;
-    const fmtYear = (iso) => (new Date(iso + 'T00:00:00').getFullYear() || iso);
+    const fmtMY = (iso) => {
+      const d = new Date(iso + 'T00:00:00');
+      return isNaN(d) ? iso : d.toLocaleDateString('en-US', { month: 'short', year: 'numeric' });
+    };
     const items = window.SITE_POSTS.slice().sort((a, b) => new Date(b.date) - new Date(a.date));
     list.innerHTML = items.map((p) =>
       `<article class="pub reveal">
-        <div class="p-year">${fmtYear(p.date)}</div>
+        <div class="p-year">${fmtMY(p.date)}</div>
         <div>
           <span class="p-venue">${p.source}</span>
           <h3>${p.title}</h3>
