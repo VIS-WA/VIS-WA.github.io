@@ -79,7 +79,7 @@
       if (me) authors = authors.split(me).join('<span class="me">' + me + '</span>');
       const links = (p.links || []).map((l) =>
         `<a href="${l.href}" target="_blank" rel="noopener">${l.label}</a>`).join('');
-      const fig = p.img ? `<figure class="pub-fig"><img src="${p.img}" alt="${p.title}" loading="lazy" /></figure>` : '';
+      const fig = p.img ? `<figure class="pub-fig${p.imgBare ? ' bare' : ''}"><img src="${p.img}" alt="${p.title}" loading="lazy" /></figure>` : '';
       return `<article class="pub reveal">
         <div class="p-year">${p.year}</div>
         <div>

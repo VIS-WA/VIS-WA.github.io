@@ -41,6 +41,7 @@ window.SITE_PUBLICATIONS = [
     venue: "IEEE Access",
     title: "Engineering End-to-End Remote Labs Using IoT-Based Retrofitting",
     img: "assets/remote_labs.svg",
+    imgBare: true,
     authors: "Savitha Viswanadh Kandala, Akshit Gureja, Nagesh Walchatwar, and 8 more authors",
     links: [
       { label: "DOI",  href: "https://doi.org/10.1109/ACCESS.2024.3523066" },

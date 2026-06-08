@@ -396,6 +396,7 @@ h1, h2, h3, h4 {
   padding: 0.9rem;
 }
 .pub-fig img { display: block; width: 100%; height: auto; max-height: 190px; object-fit: contain; }
+.pub-fig.bare { background: none; padding: 0; }   /* figure already carries its own background */
 
 /* ===================== NEWS ===================== */
 .news-grid { display: grid; grid-template-columns: 1fr; gap: 0; }
