@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light" data-direction="signal" data-density="regular" data-accent="blue">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>404 — Signal Lost · Savitha Viswanadh Kandala</title>
+<meta name="robots" content="noindex, follow" />
+<meta name="theme-color" content="#fbfbfb" media="(prefers-color-scheme: light)" />
+<meta name="theme-color" content="#1a1c22" media="(prefers-color-scheme: dark)" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%231a1c22'/%3E%3Ccircle cx='16' cy='16' r='6' fill='%234c8dff'/%3E%3C/svg%3E" />
+
+<!-- theme applied before paint so there's no flash on the way in -->
+<script>
+(function () {
+  try {
+    var t = localStorage.getItem('svk-theme');
+    if (t) document.documentElement.setAttribute('data-theme', t);
+    else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches)
+      document.documentElement.setAttribute('data-theme', 'dark');
+  } catch (e) {}
+})();
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=Space+Mono:wght@400;700&display=swap" />
+<link rel="stylesheet" href="/styles.css" />
+
+<style>
+  /* ---- 404-only layer; nf- prefix keeps it clear of the site's classes ---- */
+  .nf-main { min-height: calc(100vh - var(--nav-h, 64px)); display: grid; place-items: center;
+             padding: 3rem 0 5rem; position: relative; overflow: hidden; }
+  .nf-grid { position: absolute; inset: 0; pointer-events: none; opacity: 0.5;
+             background-image: linear-gradient(var(--line) 1px, transparent 1px),
+                               linear-gradient(90deg, var(--line) 1px, transparent 1px);
+             background-size: 64px 64px;
+             mask-image: radial-gradient(ellipse 70% 60% at 50% 45%, #000 20%, transparent 78%);
+             -webkit-mask-image: radial-gradient(ellipse 70% 60% at 50% 45%, #000 20%, transparent 78%); }
+  .nf-in { position: relative; text-align: center; max-width: 46rem; }
+
+  .nf-eyebrow { display: inline-flex; align-items: center; gap: 0.7rem; margin-bottom: 1.6rem; }
+  .nf-eyebrow .rule { height: 1px; width: 34px; background: var(--accent); }
+
+  .nf-code { font-family: var(--font-display); font-weight: 700;
+             font-size: clamp(5.5rem, 20vw, 11rem); line-height: 0.9;
+             letter-spacing: -0.04em; display: flex; justify-content: center;
+             align-items: center; gap: 0.02em; margin-bottom: 0.4rem; }
+  .nf-zero { position: relative; color: var(--accent); }
+  .nf-zero::after { content: ""; position: absolute; inset: 50% auto auto 50%;
+                    width: 1.35em; height: 1.35em; transform: translate(-50%, -50%);
+                    border: 1px solid var(--accent-line); border-radius: 50%;
+                    animation: nf-ring 3.4s var(--ease) infinite; }
+  @keyframes nf-ring { 0% { transform: translate(-50%,-50%) scale(0.55); opacity: 0; }
+                       35% { opacity: 0.9; } 100% { transform: translate(-50%,-50%) scale(1.5); opacity: 0; } }
+
+  /* the transmission that never lands */
+  .nf-link-svg { width: min(340px, 78vw); height: 46px; margin: 0.4rem auto 1.6rem; display: block; }
+  .nf-node { fill: none; stroke: var(--ink-3); stroke-width: 1.4; }
+  .nf-path { stroke: var(--line-2); stroke-width: 1.4; stroke-dasharray: 4 5; fill: none; }
+  .nf-pkt  { fill: var(--accent); animation: nf-fly 3.6s var(--ease) infinite; }
+  @keyframes nf-fly { 0% { transform: translateX(0); opacity: 0; }
+                      12% { opacity: 1; } 58% { opacity: 1; }
+                      72%, 100% { transform: translateX(104px); opacity: 0; } }
+
+  .nf-quip { font-family: var(--font-body); font-size: clamp(1.1rem, 2.4vw, 1.45rem);
+             color: var(--ink); line-height: 1.5; margin: 0 auto 1.5rem; min-height: 2.6em;
+             max-width: 34rem; }
+  .nf-quip .nf-cursor { display: inline-block; width: 0.55ch; background: var(--accent);
+                        margin-left: 0.12em; animation: nf-blink 1.05s steps(1) infinite;
+                        color: transparent; }
+  @keyframes nf-blink { 50% { opacity: 0; } }
+
+  .nf-path-box { display: inline-flex; align-items: center; gap: 0.6rem; flex-wrap: wrap;
+                 justify-content: center; font-family: var(--font-mono); font-size: 0.76rem;
+                 color: var(--ink-3); background: var(--bg-2); border: 1px solid var(--line);
+                 border-radius: var(--radius); padding: 0.5rem 0.85rem; margin-bottom: 1.8rem;
+                 max-width: 100%; }
+  .nf-path-box b { font-weight: 400; color: var(--ink-2); word-break: break-all; }
+
+  .nf-hint { border-top: 1px solid var(--line); padding-top: 1.7rem; margin-top: 0.4rem; }
+  .nf-hint-lead { font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.14em;
+                  text-transform: uppercase; color: var(--ink-3); margin-bottom: 1rem; }
+  .nf-actions { display: flex; flex-wrap: wrap; gap: 0.7rem; justify-content: center; }
+  .nf-chip { font-family: var(--font-mono); font-size: 0.78rem; padding: 0.55rem 0.95rem;
+             border: 1px solid var(--line-2); border-radius: var(--radius); color: var(--ink-2);
+             transition: color 0.2s, border-color 0.2s, transform 0.2s var(--ease); }
+  .nf-chip:hover { color: var(--accent); border-color: var(--accent); transform: translateY(-2px); }
+  .nf-chip.is-match { border-color: var(--accent); color: var(--ink);
+                      background: var(--accent-soft); }
+  .nf-reroll { background: none; cursor: pointer; font: inherit; font-family: var(--font-mono);
+               font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase;
+               color: var(--ink-3); border: 0; border-bottom: 1px solid var(--line-2);
+               padding: 0 0 2px; margin-top: 2rem; transition: color 0.2s, border-color 0.2s; }
+  .nf-reroll:hover { color: var(--accent); border-color: var(--accent); }
+
+  @media (prefers-reduced-motion: reduce) {
+    .nf-zero::after, .nf-pkt, .nf-quip .nf-cursor { animation: none; }
+    .nf-pkt { opacity: 1; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-in">
+    <a class="brand" href="/"><span>KSV</span></a>
+    <div class="nav-links" id="navLinks">
+      <a href="/#about">about</a>
+      <a href="/#research">research</a>
+      <a href="/#publications">publications</a>
+      <a href="/#news">news</a>
+      <a href="/#contact">contact</a>
+    </div>
+    <button class="theme-btn" id="themeBtn" aria-label="Toggle dark mode">
+      <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="4.2"/><path d="M12 2v2.4M12 19.6V22M4.2 4.2l1.7 1.7M18.1 18.1l1.7 1.7M2 12h2.4M19.6 12H22M4.2 19.8l1.7-1.7M18.1 5.9l1.7-1.7"/></svg>
+      <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20.5 14.2A8.3 8.3 0 0 1 9.8 3.5a8.3 8.3 0 1 0 10.7 10.7z"/></svg>
+    </button>
+  </div>
+</nav>
+
+<main class="nf-main">
+  <div class="nf-grid" aria-hidden="true"></div>
+  <div class="nf-in wrap">
+
+    <div class="nf-eyebrow">
+      <span class="rule"></span>
+      <span class="tag">Error 404 · Signal lost</span>
+    </div>
+
+    <div class="nf-code" aria-label="404">
+      <span>4</span><span class="nf-zero">0</span><span>4</span>
+    </div>
+
+    <svg class="nf-link-svg" viewBox="0 0 200 46" aria-hidden="true">
+      <path class="nf-path" d="M28 23 H172" />
+      <circle class="nf-node" cx="20" cy="23" r="7" />
+      <circle class="nf-node" cx="180" cy="23" r="7" stroke-dasharray="3 3" />
+      <circle class="nf-pkt" cx="34" cy="23" r="3.4" />
+    </svg>
+
+    <p class="nf-quip" id="quip" aria-live="polite"></p>
+
+    <div class="nf-path-box">
+      <span>requested</span><b id="reqPath">/</b>
+    </div>
+
+    <div class="nf-hint">
+      <div class="nf-hint-lead" id="hintLead">Try one of these instead</div>
+      <div class="nf-actions" id="actions"></div>
+      <button class="nf-reroll" id="reroll" type="button">↻ retransmit</button>
+    </div>
+
+  </div>
+</main>
+
+<footer class="foot wrap">
+  <span class="tag">© 2026 Savitha Viswanadh Kandala</span>
+  <span class="tag"><a href="/">viswanadhk.com</a></span>
+</footer>
+
+<script>
+(function () {
+  var root = document.documentElement;
+
+  /* keep the sticky nav offset in sync (styles.css expects --nav-h) */
+  var nav = document.querySelector('.nav');
+  if (nav) {
+    var setH = function () { root.style.setProperty('--nav-h', nav.offsetHeight + 'px'); };
+    setH();
+    window.addEventListener('resize', setH);
+  }
+
+  /* theme toggle — same storage key as the main site */
+  var btn = document.getElementById('themeBtn');
+  if (btn) btn.addEventListener('click', function () {
+    var next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+    root.setAttribute('data-theme', next);
+    try { localStorage.setItem('svk-theme', next); } catch (e) {}
+  });
+
+  /* ---- the lines. Embedded-systems flavoured; one is picked at random. ---- */
+  var QUIPS = [
+    'Packet dropped in transit. No retransmission was scheduled.',
+    'This route isn’t in the table. The gateway is that way ↓',
+    'TTL expired — 404 hops, nothing to show for it.',
+    'The URL failed its CRC check. One bit off, one page short.',
+    'Backscattered a request into the void. Nothing reflected back.',
+    'Out of range. Try moving closer to the reader.',
+    'This page entered deep sleep and never woke up.',
+    'Exceeded its microwatt budget and browned out mid-render.',
+    'No energy harvested at this address.',
+    'The watchdog timer got here before you did.',
+    'Cache miss. Went all the way to main memory. Still nothing.',
+    'Quantized this page down to zero bits. Slightly too aggressive.',
+    'Inference complete: this page does not exist. Confidence: high.',
+    'Profiled the request end to end. 100% of the time was spent not finding it.',
+    'The all-gather came back with an empty shard.',
+    'Collision detected. Backing off exponentially. Still nothing here.',
+    'Page not found — possibly offloaded to the cloud. Ironic, I know.',
+    'Somewhere between the sensor and the cloud, this one got lost.'
+  ];
+
+  var quipEl = document.getElementById('quip');
+  var last = -1;
+  function newQuip() {
+    var i = Math.floor(Math.random() * QUIPS.length);
+    if (i === last) i = (i + 1) % QUIPS.length;   // never repeat back-to-back
+    last = i;
+    quipEl.innerHTML = '';
+    quipEl.appendChild(document.createTextNode(QUIPS[i]));
+    var cur = document.createElement('span');
+    cur.className = 'nf-cursor'; cur.textContent = '█';
+    quipEl.appendChild(cur);
+  }
+  newQuip();
+  document.getElementById('reroll').addEventListener('click', newQuip);
+
+  /* ---- show what was asked for, and route the old al-folio URLs somewhere useful ---- */
+  var path = location.pathname || '/';
+  document.getElementById('reqPath').textContent = path + (location.search || '');
+
+  var ROUTES = [
+    [/(^|\/)(cv|resume|vitae)(\/|$)/i,            'CV (PDF)',     '/assets/pdf/Viswanadh_resume.pdf'],
+    [/(^|\/)(publications?|papers?|bib)(\/|$)/i,  'Publications', '/#publications'],
+    [/(^|\/)(projects?|research)(\/|$)/i,         'Research',     '/#research'],
+    [/(^|\/)news(\/|$)/i,                         'News',         '/#news'],
+    [/(^|\/)(blog|posts?|press)(\/|$)/i,          'Posts',        '/#posts'],
+    [/(^|\/)about(\/|$)/i,                        'About',        '/#about'],
+    [/(^|\/)(contact|email)(\/|$)/i,              'Contact',      '/#contact'],
+    [/(^|\/)(repositories|repos|code)(\/|$)/i,    'GitHub',       'https://github.com/VIS-WA']
+  ];
+
+  var match = null;
+  for (var i = 0; i < ROUTES.length; i++) {
+    if (ROUTES[i][0].test(path)) { match = ROUTES[i]; break; }
+  }
+
+  var DEFAULTS = [
+    ['Home', '/'], ['Research', '/#research'], ['Publications', '/#publications'], ['Contact', '/#contact']
+  ];
+
+  var actions = document.getElementById('actions');
+  var lead = document.getElementById('hintLead');
+  var frag = document.createDocumentFragment();
+
+  function chip(label, href, isMatch) {
+    var a = document.createElement('a');
+    a.className = 'nf-chip' + (isMatch ? ' is-match' : '');
+    a.href = href;
+    a.textContent = isMatch ? label + ' →' : label;
+    if (/^https?:/.test(href)) { a.target = '_blank'; a.rel = 'noopener'; }
+    return a;
+  }
+
+  if (match) {
+    // the old site had a page here; point straight at where it lives now
+    lead.textContent = 'That page moved — it’s here now';
+    frag.appendChild(chip(match[1], match[2], true));
+    frag.appendChild(chip('Home', '/', false));
+  } else {
+    for (var j = 0; j < DEFAULTS.length; j++) frag.appendChild(chip(DEFAULTS[j][0], DEFAULTS[j][1], false));
+  }
+  actions.appendChild(frag);
+})();
+</script>
+
+</body>
+</html>
