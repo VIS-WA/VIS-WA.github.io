@@ -178,6 +178,21 @@ h1, h2, h3, h4 {
 .nav-links a:hover { color: var(--ink); }
 .nav-links a:hover::after { width: 100%; }
 
+/* --- scroll-spy: the section you're currently in --- */
+.nav-links a.is-active { color: var(--ink); }
+.nav-links a.is-active::after { width: 100%; }
+
+/* "you are here" crumb — shown on mobile, where the links collapse into the burger */
+.nav-crumb {
+  display: none;
+  font-family: var(--font-mono); font-size: 0.72rem;
+  letter-spacing: 0.08em; color: var(--ink-3);
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+  opacity: 0; transition: opacity 0.25s var(--ease);
+}
+.nav-crumb.show { opacity: 1; }
+.nav-crumb::before { content: "/ "; color: var(--line-2); }
+
 .theme-btn {
   display: grid; place-items: center;
   width: 38px; height: 38px;
@@ -560,6 +575,8 @@ h1, h2, h3, h4 {
   .pub .p-year { padding-top: 0; }
   .news-item { grid-template-columns: 1fr; gap: 0.3rem; }
   .nav-links { display: none; }
+  .brand { margin-right: 0.9rem; }
+  .nav-crumb { display: block; margin-right: auto; max-width: 42vw; }
   .nav-burger {
     display: grid; place-items: center; width: 38px; height: 38px;
     border: 1px solid var(--line-2); border-radius: var(--radius);

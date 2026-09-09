@@ -8,7 +8,7 @@
 window.SITE_NEWS = [
   {
     date: "2026-06-15",
-    html: `Interning with Google's <a href="https://github.com/openxla/xprof" target="_blank" rel="noopener">XProf</a> team (CoreML) for the next three months, improving hardware profilers for PyTorch on Google Cloud TPUs.`
+    html: `Interning with Google's <a href="https://github.com/openxla/xprof" target="_blank" rel="noopener">XProf</a> team (CoreML) for the next three months, analysing and improving communication-computation overlap for distributed training workloads on Google Cloud TPUs.`
   },
   {
     date: "2026-04-19",

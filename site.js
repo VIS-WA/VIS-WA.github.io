@@ -57,6 +57,62 @@
       a.addEventListener('click', () => navLinks.classList.remove('open')));
   }
 
+  /* ---- scroll-spy: show which section you're in (nav underline + mobile crumb) ---- */
+  (function scrollSpy() {
+    const navEl = document.querySelector('.nav');
+    const tickerEl = document.getElementById('ticker');
+    const crumb = document.getElementById('navCrumb');
+    const items = Array.from(document.querySelectorAll('.nav-links a[href^="#"]'))
+      .map((a) => {
+        const id = a.getAttribute('href').slice(1);
+        const sec = id && document.getElementById(id);
+        return sec ? { sec, a, label: a.textContent.trim() } : null;
+      })
+      .filter(Boolean);
+    if (!items.length) return;
+
+    let current;
+    function update() {
+      // probe just below whatever is pinned right now (nav, plus the ticker when shown)
+      const stuck = (navEl ? navEl.offsetHeight : 0) +
+                    (tickerEl && !tickerEl.hidden ? tickerEl.offsetHeight : 0);
+      const probe = window.scrollY + stuck + 28;
+
+      let active = null;
+      for (const it of items) {
+        if (it.sec.getBoundingClientRect().top + window.scrollY <= probe) active = it;
+      }
+      // at the very bottom the last section wins, even when it's too short to reach the probe
+      if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 4) {
+        active = items[items.length - 1];
+      }
+
+      if (active === current) return;   // only touch the DOM when it actually changes
+      current = active;
+      items.forEach((it) => {
+        const on = it === active;
+        it.a.classList.toggle('is-active', on);
+        if (on) it.a.setAttribute('aria-current', 'true');
+        else it.a.removeAttribute('aria-current');
+      });
+      if (crumb) {
+        if (active) crumb.textContent = active.label;
+        crumb.classList.toggle('show', !!active);
+      }
+    }
+
+    let queued = false;
+    function onScroll() {
+      if (queued) return;
+      queued = true;
+      requestAnimationFrame(function () { queued = false; update(); });
+    }
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onScroll);
+    update();
+    setTimeout(update, 400);   // re-check once fonts and the ticker have settled
+  })();
+
   /* ---- email assembly (anti-scrape; NUS address, +tag tracks the source) ---- */
   // Parts kept split so scrapers can't lift a literal address from the source.
   const eUser = 'viswanadh', eDom = 'u.nus.edu';
