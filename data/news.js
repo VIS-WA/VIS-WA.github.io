@@ -7,6 +7,10 @@
    ============================================================ */
 window.SITE_NEWS = [
   {
+    date: "2026-06-15",
+    html: `Interning with Google's <a href="https://github.com/openxla/xprof" target="_blank" rel="noopener">XProf</a> team (CoreML) for the next three months, improving hardware profilers for PyTorch on Google Cloud TPUs.`
+  },
+  {
     date: "2026-04-19",
     html: `<a href="https://tinyllm.org/" target="_blank" rel="noopener">TinyLLM</a> received the 2026 Google Award for Machine Learning Research and Education with TPUs.`
   },
